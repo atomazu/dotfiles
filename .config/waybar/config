@@ -1,0 +1,103 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "spacing": 10,
+    "margin-top": 0,
+    "margin-left": 12,
+    "margin-right": 12,
+    
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    
+    "modules-center": [
+        "hyprland/window"
+    ],
+    
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "clock",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "tooltip": true,
+        "tooltip-format": "Workspace: {name}\nWindows: {windows}"
+    },
+
+    "hyprland/window": {
+        "max-length": 50,
+        "separate-outputs": true,
+        "tooltip": true,
+        "tooltip-format": "App ID: {app_id}\nTitle: {title}"
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": "󰃭 {:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>",
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "CPU Usage: {usage}%\nFrequency: {freq_percent}%"
+    },
+    
+    "memory": {
+        "format": " {percentage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}GB/{total:0.1f}GB ({percentage}%)\nSwap: {swapUsed:0.1f}GB/{swapTotal:0.1f}GB\nAvailable: {avail:0.1f}GB"
+    },
+
+    "network": {
+        "format-wifi": "󰤨",
+        "format-ethernet": "",
+        "format-disconnected": "󰪎",
+        "tooltip": true,
+        "tooltip-format": "Interface: {ifname}\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}\n\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
+        "tooltip-format-wifi": "SSID: {essid}\nSignal: {signalStrength}%\nFreq: {frequency}MHz\n\nInterface: {ifname}\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}\n\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "Interface: {ifname}\nIP: {ipaddr}/{cidr}\nGateway: {gwaddr}\n\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
+        "tooltip-format-disconnected": "Network Disconnected",
+        "interval": 1
+    },
+
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰝟 {volume}%",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": true,
+        "tooltip-format": "Volume: {volume}%\nDefault Sink: {desc}",
+        "scroll-step": 5
+    },
+
+    "tray": {
+        "spacing": 10,
+        "icon-size": 15,
+        "tooltip": true,
+        "tooltip-format": "System Tray"
+    }
+}

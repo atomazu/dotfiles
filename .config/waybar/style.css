@@ -1,0 +1,154 @@
+/* Base styles */
+* {
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+    font-size: 12px;
+    color: white;
+    background: transparent;
+}
+
+/* Window and base container */
+window#waybar {
+    background: transparent;  /* Semi-transparent dark background */
+    margin: 0 5px;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+/* Module spacing - consolidating the individual margins */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: rgba(0, 0, 0, 0.4);  /* Slightly darker background for module groups */
+    margin: 0 5px;
+    padding: 0;
+    border-radius: 15px;
+}
+
+/* Workspace styling */
+#workspaces * {
+    color: white;
+    background: transparent;
+}
+
+#workspaces button {
+    background: transparent;  /* Darker background for workspace buttons */
+    margin: 3px 2px;
+    padding: 0 6px;
+    border-radius: 15px;
+    min-height: 18px;
+    padding: 0px 10px 0px 10px;
+}
+
+#workspaces button.active {
+    background: rgba(255, 255, 255, 0.1);  /* Lighter background for active workspace */
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);  /* Subtle border */
+    padding: 0px 10px 0px 10px;
+}
+
+/* Module base styles - consolidated for consistency */
+#window,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#clock,
+#tray,
+#battery,
+#custom-power {
+    background: transparent;  /* Subtle background for individual modules */
+    padding: 0 8px;
+    margin: 0 2px;
+    border-radius: 15px;
+}
+
+/* Tooltip styling */
+tooltip {
+    background-color: rgba(25, 25, 25, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+tooltip * {
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-size: 12px;
+}
+
+/* Calendar specific styling */
+tooltip calendar {
+    background: transparent;
+    padding: 5px;
+    margin: 5px;
+}
+
+tooltip calendar:selected {
+    color: rgb(137, 180, 250);
+    font-weight: bold;
+}
+
+tooltip calendar.header {
+    color: rgb(203, 166, 247);
+    font-weight: bold;
+    margin: 2px;
+}
+
+tooltip calendar.button {
+    color: rgb(137, 180, 250);
+    font-weight: bold;
+}
+
+tooltip calendar.highlight {
+    color: rgb(249, 226, 175);
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+tooltip calendar:indeterminate {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Warning states */
+#cpu.warning,
+#memory.warning {
+    color: rgb(249, 226, 175);
+    background: rgba(249, 226, 175, 0.1);  /* Subtle warning background */
+}
+
+#cpu.critical,
+#memory.critical {
+    color: rgb(243, 139, 168);
+    background: rgba(243, 139, 168, 0.1);  /* Subtle critical background */
+}
+
+/* Module-specific tooltip styling */
+#cpu tooltip,
+#memory tooltip,
+#network tooltip,
+#pulseaudio tooltip {
+    padding: 8px;
+}
+
+/* Context menu styling */
+menu {
+    background-color: rgba(25, 25, 25, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 4px;
+}
+
+menuitem {
+    padding: 4px 8px;
+    margin: 2px 0;
+    border-radius: 15px;
+}
+
+menuitem:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+menuitem:disabled {
+    color: rgba(255, 255, 255, 0.3);
+}
