@@ -1,5 +1,4 @@
 #!/bin/bash
-# ~/.config/hypr/scripts/window-switcher.sh
 
 # Function to get icon based on class name
 get_icon() {

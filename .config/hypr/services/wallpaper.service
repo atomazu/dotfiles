@@ -1,0 +1,12 @@
+[Unit]
+Description=Wallpaper Cycling Service
+PartOf=graphical-session.target
+After=swww.service
+
+[Service]
+ExecStart=/home/jonas/.config/hypr/scripts/wallpaper-cycle.sh /home/jonas/Pictures/Backgrounds
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=graphical-session.target

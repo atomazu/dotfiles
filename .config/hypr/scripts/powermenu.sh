@@ -17,7 +17,7 @@ rofi \
 
 case "$selected" in
     "1. 󰌾 Lock")
-        nohup ~/.config/hypr/Scripts/lock.sh > /dev/null 2>&1 & ;;
+        nohup ~/.config/hypr/scripts/lock.sh > /dev/null 2>&1 & ;;
     "2. 󰑐 Reboot")
         systemctl reboot ;;
     "3. 󰤄 Sleep")

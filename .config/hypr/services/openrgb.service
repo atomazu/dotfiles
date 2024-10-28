@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenRGB Server
+PartOf=graphical-session.target
+
+
+[Service]
+ExecStart=/usr/bin/openrgb --server --profile workspace-colors.orp
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=graphical-session.target
