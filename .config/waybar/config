@@ -2,12 +2,13 @@
     "layer": "top",
     "position": "top",
     "height": 20,
-    "spacing": 10,
-    "margin-top": 0,
+    "spacing": 0,
+    "margin-top": 5,
     "margin-left": 12,
     "margin-right": 12,
     
     "modules-left": [
+        "clock",
         "hyprland/workspaces"
     ],
     
@@ -20,7 +21,6 @@
         "network",
         "cpu",
         "memory",
-        "clock",
         "tray"
     ],
 
@@ -40,12 +40,10 @@
     },
 
     "clock": {
-        "format": " {:%H:%M}",
-        "format-alt": "󰃭 {:%Y-%m-%d}",
-        "tooltip-format": "<big>{:%Y %B}</big>",
-        "actions": {
-            "on-click-right": "mode"
-        }
+        "format": "󰃭 {:%Y-%m-%d    %H:%M:%S}",
+        "format-alt": "󰃭 {:%m-%d    %H:%M}",
+        "interval": 1,
+        "tooltip": false
     },
 
     "cpu": {
@@ -55,8 +53,7 @@
             "critical": 90
         },
         "interval": 1,
-        "tooltip": true,
-        "tooltip-format": "CPU Usage: {usage}%\nFrequency: {freq_percent}%"
+        "tooltip": false
     },
     
     "memory": {
