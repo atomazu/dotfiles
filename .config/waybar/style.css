@@ -1,7 +1,7 @@
 /* Base styles */
 * {
     all: unset;
-    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+    font-family: "0xProto Nerd Font Propo", "Symbols Nerd Font";
     font-size: 12px;
     color: white;
     background: transparent;
@@ -40,6 +40,7 @@
 #clock,
 #tray,
 #battery,
+#backlight,
 #custom-power {
     padding: 0 8px;
     border-radius: 15px;
@@ -55,15 +56,28 @@ tooltip {
 
 /* Warning states */
 #cpu.warning,
-#memory.warning {
+#memory.warning,
+#battery.warning {
     color: rgb(249, 226, 175);
     background: rgba(249, 226, 175, 0.1);
 }
 
 #cpu.critical,
-#memory.critical {
+#memory.critical,
+#battery.critical {
     color: rgb(243, 139, 168);
     background: rgba(243, 139, 168, 0.1);
+}
+
+/* Battery specific styles */
+#battery.charging {
+    color: rgb(166, 227, 161);
+    background: rgba(166, 227, 161, 0.1);
+}
+
+/* Backlight specific styles */
+#backlight {
+    min-width: 70px;
 }
 
 /* Context menu */
