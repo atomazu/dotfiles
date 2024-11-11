@@ -1,2 +1,2 @@
 .config/hypr/Scripts/.venv/*
-*.log
+.config/hypr/devices/device.conf
