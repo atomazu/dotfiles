@@ -27,13 +27,13 @@ icons=1
 # Urgency specific
 [urgency=low]
 border-color=#313244
-default-timeout=3000
+default-timeout=1000
 
 [urgency=normal]
 border-color=#89b4fa
-default-timeout=3000
+default-timeout=1000
 
 [urgency=high]
 border-color=#f38ba8
 text-color=#f38ba8
-default-timeout=3000
+default-timeout=1000
