@@ -5,7 +5,6 @@ configuration {
     steal-focus: true;
     drun-display-format: "{name}";
     
-    /* Keyboard navigation */
     kb-row-up: "Up,Control+k";
     kb-row-down: "Down,Control+j";
     kb-accept-entry: "Return,KP_Enter";
@@ -15,83 +14,94 @@ configuration {
 
 * {
     background-color: transparent;
-    text-color: #CDD6F4;
+    text-color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
 }
 
 window {
     transparency: "real";
-    background-color: #1E1E2E;
+    background-color: rgba(20, 20, 25, 0.3);
+    background-blur: 30px;
     width: 600px;
-    border: 2px;
-    border-color: #89B4FA;
-    border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.05);
+    border: 1px;
+    border-radius: 12px;
     location: center;
     anchor: center;
 }
 
 mainbox {
     children: [ inputbar, listview ];
-    background-color: #1E1E2E;
-    border-radius: 10px;
-    padding: 5px;
+    padding: 8px;
+    background-color: transparent;
+    border-radius: 12px;
 }
 
 inputbar {
     children: [ prompt, entry ];
-    background-color: #1E1E2E;
-    border: 0px 0px 1px 0px;
-    border-color: #89B4FA;
-    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 4px;
 }
 
 prompt {
     enabled: true;
-    padding: 0px 5px;
-    background-color: inherit;
+    padding: 0 8px;
+    background-color: transparent;
     text-color: inherit;
 }
 
 entry {
-    background-color: inherit;
-    placeholder-color: #666666;
-    placeholder: "Search Applications...";
-    padding: 0px 5px;
+    background-color: transparent;
+    placeholder-color: rgba(255, 255, 255, 0.5);
+    placeholder: "Type to search...";
+    padding: 0 8px;
+    margin: 0 4px;
 }
 
 listview {
-    background-color: #1E1E2E;
-    padding: 10px;
+    background-color: transparent;
+    padding: 4px;
     columns: 1;
     lines: 10;
-    spacing: 5px;
+    spacing: 4px;
     cycle: false;
     dynamic: true;
     layout: vertical;
+    margin: 4px;
 }
 
 element {
     orientation: horizontal;
-    padding: 5px;
-    spacing: 10px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    spacing: 12px;
+    border-radius: 12px;
+    background-color: transparent;
 }
 
 element normal.normal {
-    background-color: inherit;
+    background-color: transparent;
     text-color: inherit;
 }
 
 element selected.normal {
-    background-color: #89B4FA;
-    text-color: #1E1E2E;
+    background-color: rgba(255, 255, 255, 0.08);
+    text-color: rgba(255, 255, 255, 1);
 }
 
 element-icon {
     background-color: transparent;
     size: 24px;
+    margin: 0 4px;
 }
 
 element-text {
     background-color: transparent;
     vertical-align: 0.5;
+    margin: 0 4px;
+}
+
+element-text selected {
+    text-color: rgba(255, 255, 255, 1);
 }
