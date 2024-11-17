@@ -1,17 +1,18 @@
 # Style
-font=JetBrainsMono Nerd Font 11
-width=350
+font=JetBrainsMono Nerd Font 12
+width=400
 height=100
-margin=10
-padding=15
-border-size=2
-border-radius=10
+outer-margin=8
+margin=4
+padding=12
+border-size=1
+border-radius=12
 progress-color=over #89b4fa
 
 # Colors
-background-color=#1e1e2ee0
-text-color=#cdd6f4
-border-color=#89b4fa
+background-color=#14141980
+text-color=#FFFFFF
+border-color=#FFFFFF0D
 
 # General
 max-history=100
@@ -19,21 +20,41 @@ sort=-time
 layer=overlay
 anchor=top-right
 
-# Icons
-icon-path=/usr/share/icons/Papirus-Dark
-max-icon-size=48
-icons=1
+# Actions
+actions=1
+on-button-left=invoke-default-action
+on-button-middle=none
+on-button-right=dismiss
+on-touch=dismiss
 
-# Urgency specific
+# Icons
+icon-path=/usr/share/icons/Papirus-Dark:/usr/share/icons/breeze:/usr/share/icons/hicolor
+max-icon-size=24
+icons=1
+icon-location=left
+
+# Text
+markup=1
+format=<b>%s</b>\n%b
+text-alignment=left
+default-timeout=5000
+ignore-timeout=0
+
+# Criteria-based theming
 [urgency=low]
-border-color=#313244
-default-timeout=1000
+border-color=#31324480
+default-timeout=2000
 
 [urgency=normal]
-border-color=#89b4fa
-default-timeout=1000
+border-color=#89b4fa80
+default-timeout=5000
 
 [urgency=high]
+background-color=#f38ba8
 border-color=#f38ba8
-text-color=#f38ba8
-default-timeout=1000
+text-color=#FFFFFF
+default-timeout=0
+
+[app-name="Screenshot"]
+format=<b>%s</b>
+default-timeout=3000

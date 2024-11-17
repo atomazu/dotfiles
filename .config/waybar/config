@@ -1,11 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "spacing": 2,
+    "spacing": 0,
     "margin-left": 12,
     "margin-right": 12,
     "margin-bottom": 0,
-    "margin-top": 3,
+    "margin-top": 4,
     
     "modules-left": [
         "clock",
@@ -41,8 +41,8 @@
     },
 
     "clock": {
-        "format": "󰃭 {:%Y-%m-%d    %H:%M:%S}",
-        "format-alt": "󰃭 {:%m-%d    %H:%M}",
+        "format": "󰃭 {:%Y-%m-%d   %H:%M:%S}",
+        "format-alt": "󰃭 {:%m-%d   %H:%M}",
         "interval": 1,
         "tooltip": false
     },

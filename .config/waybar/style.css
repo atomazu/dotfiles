@@ -2,70 +2,69 @@
 /* .......Crystal Clear....................... */
 /* --- 👍 designed by https://github.com/Krautt  👍 --- */
 
-*{
-	font-family: "JetBrains Mono Nerd Font";
-	font-weight: bold;
-	min-height: 0;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-	
-window#waybar {
-	background:rgba(0, 0, 0, 0.4);
-	border-radius: 13px;
-	color: whitesmoke;
-}
-	
-window#waybar.hidden {
-	opacity: 0.5;
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: 400;
+    min-height: 0;
+    padding: 1px 0px;
+    margin: 0;
 }
 
-window#waybar.empty	
+window#waybar {
+    background: rgba(20, 20, 25, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+window#waybar.hidden {
+    opacity: 0.5;
+}
+
+window#waybar.empty,
 window#waybar.empty #window {
-   padding: 0px;
-   border: 0px;
-   background-color: transparent;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
 }
-	   
+
+#workspaces {
+	padding: 4px 9px;
+	background: none;
+	border-radius: 30px;
+}
+
 #workspaces button {
-	color: #6E6A86;
-   	box-shadow: none;
-	text-shadow: none;
-   	padding: 0px;
-   	border-radius: 9px;
-   	padding-left: 4px;
-   	padding-right: 4px;
-   	/*animation: gradient_f 20s ease-in infinite;
-   	transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);*/
+    color: rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0 4px;
+    border-radius: 30px;
+    background: none;
+    border: none;
 }
-   
+
 #workspaces button.active {
-	color: whitesmoke;
-   	border-radius: 15px 15px 15px 15px;
-   	padding-left: 8px;
-   	padding-right: 8px;
-   	/*animation: gradient_f 20s ease-in infinite;
-   	transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);*/
+    color: rgba(255, 255, 255, 1.0);
+    text-shadow: none;
+    box-shadow: none;
+    background: none;
+    border: none;
 }
-  
-#workspaces button.focused {
-	color: #d8dee9;
-}
-   
-#workspaces button.urgent {
-	color: #11111b;
-	border-radius: 10px;
-}
-	   
+
 #workspaces button:hover {
-	color: whitesmoke;
-    border-radius: 15px;
- 	padding-left: 2px;
-    padding-right: 2px;
-    /*animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);*/
+    color: rgba(255, 255, 255, 1.0);
 }
-	
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 0 15px;
+	margin: 0;
+}
+
 #backlight,
 #battery,
 #bluetooth,
@@ -85,7 +84,6 @@ window#waybar.empty #window {
 #tray,
 #window,
 #wireplumber,
-#workspaces,
 #custom-backlight,
 #custom-browser,
 #custom-cava_mviz,
@@ -109,99 +107,70 @@ window#waybar.empty #window {
 #custom-weather.clearNight,
 #custom-weather.cloudyFoggyDay,
 #custom-weather.cloudyFoggyNight,
-#custom-weather.default 
+#custom-weather.default,
 #custom-weather.rainyDay,
 #custom-weather.rainyNight,
 #custom-weather.severe,
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-right: 6px;
-	padding-left: 6px;
+    margin: 4px 9px;
+    background: none;
+    border-radius: 30px;
 }
-	 
+
 #temperature.critical {
-	background-color: #ff0000;
-}
-   
-@keyframes blink {
-	to {
-	color: #000000;
-	   }
+    background-color: rgba(255, 85, 85, 0.6);
 }
 
 /*-----Indicators----*/
 #custom-hypridle.notactive,
 #idle_inhibitor.activated {
-	color: #39FF14;
+    color: rgba(57, 255, 20, 0.95);
+    background-color: rgba(57, 255, 20, 0.1);
+}
+
+#taskbar button {
+    padding: 0 6px;
+    background-color: transparent;
 }
 
 #taskbar button:hover {
-    padding-left: 3px;
-    padding-right: 3px;
-    /*animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);*/
+    background-color: rgba(255, 255, 255, 0.08);
 }
-   
+
 #taskbar button.active {
-	background-color: #7f849c;
-    padding-left: 12px;
-    padding-right: 12px;
-    /*animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);*/
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 0 8px;
 }
-	   
+
 #battery.critical:not(.charging) {
-	color: #f53c3c;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+    color: rgba(255, 85, 85, 0.95);
+    background-color: rgba(255, 85, 85, 0.1);
 }
 
-#pulseaudio-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#pulseaudio-slider trough {
-	min-width: 80px;  
-	min-height: 10px; 
-	border-radius: 5px;
-	background-color: black;
-}
-
-#pulseaudio-slider highlight {
-	min-height: 10px; 
-	border-radius: 5px;
-	background-color: wheat;
-}
-
+/* Slider styling */
+#pulseaudio-slider slider,
 #backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
+    min-width: 0;
+    min-height: 0;
+    opacity: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
 }
 
+#pulseaudio-slider trough,
 #backlight-slider trough {
-	min-width: 80px;  
-	min-height: 10px;
-	border-radius: 5px;
-	background-color: black;
+    min-width: 60px;
+    min-height: 8px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
+#pulseaudio-slider highlight,
 #backlight-slider highlight {
-	min-width: 10px; 
-	border-radius: 5px;
-	background-color: wheat;
+    min-height: 8px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
 }

@@ -19,9 +19,7 @@ configuration {
 }
 
 window {
-    transparency: "real";
     background-color: rgba(20, 20, 25, 0.3);
-    background-blur: 30px;
     width: 600px;
     border-color: rgba(255, 255, 255, 0.05);
     border: 1px;

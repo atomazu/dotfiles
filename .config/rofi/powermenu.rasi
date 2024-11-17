@@ -12,56 +12,65 @@ configuration {
 
 * {
     background-color: transparent;
-    text-color: #CDD6F4;
+    text-color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
 }
 
 window {
     transparency: "real";
-    background-color: #1E1E2E;
-    width: 250px;  /* Smaller width for the power menu */
-    border: 2px;
-    border-color: #89B4FA;
-    border-radius: 10px;
+    background-color: rgba(20, 20, 25, 0.3);
+    background-blur: 30px;
+    width: 300px;
+    border-color: rgba(255, 255, 255, 0.05);
+    border: 1px;
+    border-radius: 12px;
     location: center;
     anchor: center;
 }
 
 mainbox {
-    children: [ listview ];  /* Removed inputbar since we don't need search */
-    background-color: #1E1E2E;
-    border-radius: 10px;
-    padding: 5px;
+    children: [ listview ];
+    padding: 8px;
+    background-color: transparent;
+    border-radius: 12px;
 }
 
 listview {
-    background-color: #1E1E2E;
-    padding: 10px;
+    background-color: transparent;
+    padding: 4px;
     columns: 1;
     lines: 5;
-    spacing: 5px;
+    spacing: 4px;
     cycle: false;
     dynamic: true;
     layout: vertical;
+    margin: 4px;
 }
 
 element {
     orientation: horizontal;
-    padding: 12px;  /* Increased padding for better touch targets */
-    spacing: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    spacing: 12px;
+    border-radius: 12px;
+    background-color: transparent;
 }
 
 element normal.normal {
-    background-color: inherit;
+    background-color: transparent;
     text-color: inherit;
 }
 
 element selected.normal {
-    background-color: #89B4FA;
-    text-color: #1E1E2E;
+    background-color: rgba(255, 255, 255, 0.08);
+    text-color: rgba(255, 255, 255, 1);
 }
 
 element-text {
     background-color: transparent;
     vertical-align: 0.5;
+    margin: 0 4px;
+}
+
+element-text selected {
+    text-color: rgba(255, 255, 255, 1);
 }
