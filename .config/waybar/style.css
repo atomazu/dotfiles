@@ -21,7 +21,6 @@ window#waybar.empty,
 window#waybar.empty #window {
     padding: 0;
     border: 0;
-    background-color: transparent;
 }
 
 #workspaces {
@@ -63,110 +62,17 @@ window#waybar.empty #window {
 
 #backlight,
 #battery,
-#bluetooth,
 #clock,
 #cpu,
-#disk,
-#idle_inhibitor,
-#keyboard-state,
 #memory,
-#mode,
-#mpris,
-#network,
-#power-profiles-daemon,
-#pulseaudio,
-#taskbar,
-#temperature,
 #tray,
-#window,
-#wireplumber,
-#custom-backlight,
-#custom-browser,
-#custom-cava_mviz,
-#custom-cycle_wall,
-#custom-file_manager,
-#custom-keybinds,
-#custom-keyboard,
-#custom-light_dark,
-#custom-lock,
-#custom-hint,
-#custom-hypridle,
-#custom-menu,
-#custom-power_vertical,
-#custom-power,
-#custom-settings,
-#custom-spotify,
-#custom-swaync,
-#custom-tty,
-#custom-updater,
-#custom-weather,
-#custom-weather.clearNight,
-#custom-weather.cloudyFoggyDay,
-#custom-weather.cloudyFoggyNight,
-#custom-weather.default,
-#custom-weather.rainyDay,
-#custom-weather.rainyNight,
-#custom-weather.severe,
-#custom-weather.showyIcyDay,
-#custom-weather.snowyIcyNight,
-#custom-weather.sunnyDay {
+#pulseaudio {
     margin: 4px 9px;
     background: none;
     border-radius: 30px;
 }
 
-#temperature.critical {
-    background-color: rgba(255, 85, 85, 0.6);
-}
-
-/*-----Indicators----*/
-#custom-hypridle.notactive,
-#idle_inhibitor.activated {
-    color: rgba(57, 255, 20, 0.95);
-    background-color: rgba(57, 255, 20, 0.1);
-}
-
-#taskbar button {
-    padding: 0 6px;
-    background-color: transparent;
-}
-
-#taskbar button:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-#taskbar button.active {
-    background-color: rgba(255, 255, 255, 0.08);
-    padding: 0 8px;
-}
-
 #battery.critical:not(.charging) {
     color: rgba(255, 85, 85, 0.95);
     background-color: rgba(255, 85, 85, 0.1);
-}
-
-/* Slider styling */
-#pulseaudio-slider slider,
-#backlight-slider slider {
-    min-width: 0;
-    min-height: 0;
-    opacity: 0;
-    background: none;
-    border: none;
-    box-shadow: none;
-}
-
-#pulseaudio-slider trough,
-#backlight-slider trough {
-    min-width: 60px;
-    min-height: 8px;
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-#pulseaudio-slider highlight,
-#backlight-slider highlight {
-    min-height: 8px;
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.2);
 }
