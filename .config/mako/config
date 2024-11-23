@@ -7,12 +7,12 @@ margin=4
 padding=12
 border-size=1
 border-radius=12
-progress-color=over #89b4fa
+progress-color=over #F2F2F2
 
 # Colors
-background-color=#14141980
-text-color=#FFFFFF
-border-color=#FFFFFF0D
+background-color=#14141940
+text-color=#F2F2F2
+border-color=#00000033
 
 # General
 max-history=100
@@ -42,17 +42,17 @@ ignore-timeout=0
 
 # Criteria-based theming
 [urgency=low]
-border-color=#31324480
+border-color=#14141940
 default-timeout=2000
 
 [urgency=normal]
-border-color=#89b4fa80
+border-color=#F2F2F240
 default-timeout=5000
 
 [urgency=high]
-background-color=#f38ba8
-border-color=#f38ba8
-text-color=#FFFFFF
+background-color=#FF5555
+border-color=#FF5555
+text-color=#F2F2F2
 default-timeout=0
 
 [app-name="Screenshot"]
