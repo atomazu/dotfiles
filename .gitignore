@@ -1,2 +1,3 @@
 .config/hypr/Scripts/.venv/*
 .config/hypr/devices/device.conf
+.config/uwsm/env
