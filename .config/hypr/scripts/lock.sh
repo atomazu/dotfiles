@@ -10,4 +10,4 @@ grim -o HDMI-A-1 "$acershot"      # Acer XV272U
 grim -o DP-3 "$lgshot"            # LG UltraGear
 grim -o DP-2 "$lenovoshot"        # Lenovo D32q-20B
 
-hyprlock
+uwsm app -- hyprlock

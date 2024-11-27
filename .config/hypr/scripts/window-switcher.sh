@@ -27,7 +27,7 @@ while IFS=$'\t' read -r title address; do
     icon=$(get_icon "$class")
     printf "%s\0icon\x1f%s\n" "$title" "$icon"
 done | \
-rofi \
+uwsm app -- rofi \
     -dmenu \
     -p "Switch to:" \
     -theme ~/.config/rofi/window-switcher.rasi \
