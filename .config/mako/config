@@ -12,7 +12,7 @@ progress-color=over #F2F2F2
 # Colors
 background-color=#14141940
 text-color=#F2F2F2
-border-color=#00000033
+border-color=#ffffff33
 
 # General
 max-history=100
