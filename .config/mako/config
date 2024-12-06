@@ -5,14 +5,14 @@ height=100
 outer-margin=8
 margin=4
 padding=12
-border-size=1
-border-radius=12
+border-size=2
+border-radius=9
 progress-color=over #F2F2F2
 
 # Colors
 background-color=#14141940
 text-color=#F2F2F2
-border-color=#ffffff33
+border-color=#ffffff44
 
 # General
 max-history=100
@@ -28,7 +28,7 @@ on-button-right=dismiss
 on-touch=dismiss
 
 # Icons
-icon-path=/usr/share/icons/Papirus-Dark:/usr/share/icons/breeze:/usr/share/icons/hicolor
+icon-path=/usr/share/icons/Papirus-Dark
 max-icon-size=24
 icons=1
 icon-location=left
@@ -37,23 +37,23 @@ icon-location=left
 markup=1
 format=<b>%s</b>\n%b
 text-alignment=left
-default-timeout=5000
+default-timeout=10000
 ignore-timeout=0
 
 # Criteria-based theming
 [urgency=low]
-border-color=#14141940
+border-color=#ffffff44
 default-timeout=2000
 
 [urgency=normal]
-border-color=#F2F2F240
+border-color=#ffffff44
 default-timeout=5000
 
 [urgency=high]
 background-color=#FF5555
-border-color=#FF5555
+border-color=#ffffff44
 text-color=#F2F2F2
-default-timeout=0
+default-timeout=15000
 
 [app-name="Screenshot"]
 format=<b>%s</b>
