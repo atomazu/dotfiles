@@ -3,6 +3,4 @@ path = "/home/jonas/Pictures/Backgrounds"
 duration = "2m"
 sorting = "random"
 mode = "center"
-transition-time = 1500
-
-[default.transition.fade]
+transition-time = 1000
