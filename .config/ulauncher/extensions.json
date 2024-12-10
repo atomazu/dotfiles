@@ -6,13 +6,6 @@
         "last_commit": "7320f7b1499417ad31d920688e600b80d8454f6d",
         "last_commit_time": "2024-12-10T15:31:41"
     },
-    "com.github.programazing.ulauncher-local-listeners-v2": {
-        "id": "com.github.programazing.ulauncher-local-listeners-v2",
-        "url": "https://github.com/Programazing/ulauncher-local-listeners-v2",
-        "updated_at": "2024-12-10T19:35:17.931083",
-        "last_commit": "af571ebb3b16d2d7e105b53caeaa3ba0c3686d00",
-        "last_commit_time": "2024-06-09T00:17:03"
-    },
     "com.github.pascalbe-dev.ulauncher-repo-opener": {
         "id": "com.github.pascalbe-dev.ulauncher-repo-opener",
         "url": "https://github.com/pascalbe-dev/ulauncher-repo-opener",
@@ -40,5 +33,26 @@
         "updated_at": "2024-12-10T20:13:29.949875",
         "last_commit": "39218fddb79d86150c4624d96b1a162eba89c993",
         "last_commit_time": "2023-05-23T08:14:57"
+    },
+    "com.github.doekeb.ulauncher-gnome-calculator": {
+        "id": "com.github.doekeb.ulauncher-gnome-calculator",
+        "url": "https://github.com/Doekeb/ulauncher-gnome-calculator",
+        "updated_at": "2024-12-10T21:44:27.144507",
+        "last_commit": "f1efd61c6ecd1160b007bca1f90511a346378e64",
+        "last_commit_time": "2021-05-03T15:30:01"
+    },
+    "com.github.ulauncher.ulauncher-emoji": {
+        "id": "com.github.ulauncher.ulauncher-emoji",
+        "url": "https://github.com/Ulauncher/ulauncher-emoji",
+        "updated_at": "2024-12-10T21:49:46.606291",
+        "last_commit": "827cfe5e1d2f89f742f811f981759787b0654fa9",
+        "last_commit_time": "2023-11-04T18:37:13"
+    },
+    "com.github.ulauncher.ulauncher-timer": {
+        "id": "com.github.ulauncher.ulauncher-timer",
+        "url": "https://github.com/ulauncher/ulauncher-timer",
+        "updated_at": "2024-12-10T21:51:41.430289",
+        "last_commit": "2d3fe82fe1e38670e6eb8887cd2a4b4d1c2baa79",
+        "last_commit_time": "2023-03-25T08:07:41"
     }
 }
