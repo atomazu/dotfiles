@@ -1,0 +1,44 @@
+{
+    "com.github.igorvaryvoda.ulauncher-perplexity": {
+        "id": "com.github.igorvaryvoda.ulauncher-perplexity",
+        "url": "https://github.com/IgorVaryvoda/ulauncher-perplexity",
+        "updated_at": "2024-12-10T19:34:30.081498",
+        "last_commit": "7320f7b1499417ad31d920688e600b80d8454f6d",
+        "last_commit_time": "2024-12-10T15:31:41"
+    },
+    "com.github.programazing.ulauncher-local-listeners-v2": {
+        "id": "com.github.programazing.ulauncher-local-listeners-v2",
+        "url": "https://github.com/Programazing/ulauncher-local-listeners-v2",
+        "updated_at": "2024-12-10T19:35:17.931083",
+        "last_commit": "af571ebb3b16d2d7e105b53caeaa3ba0c3686d00",
+        "last_commit_time": "2024-06-09T00:17:03"
+    },
+    "com.github.pascalbe-dev.ulauncher-repo-opener": {
+        "id": "com.github.pascalbe-dev.ulauncher-repo-opener",
+        "url": "https://github.com/pascalbe-dev/ulauncher-repo-opener",
+        "updated_at": "2024-12-10T19:35:43.982094",
+        "last_commit": "e72ec2961270c32d5b15192abbfc77020f37bbcc",
+        "last_commit_time": "2024-01-29T09:18:00"
+    },
+    "com.github.noxphasma.ulauncher-protondb-search": {
+        "id": "com.github.noxphasma.ulauncher-protondb-search",
+        "url": "https://github.com/NoXPhasma/ulauncher-protondb-search",
+        "updated_at": "2024-12-10T19:36:54.641482",
+        "last_commit": "f76650d7089e9f0be7d573ba66cef230a72a474b",
+        "last_commit_time": "2023-10-04T18:57:28"
+    },
+    "com.github.adamtillou.ulauncher-aurman-plugin": {
+        "id": "com.github.adamtillou.ulauncher-aurman-plugin",
+        "url": "https://github.com/AdamTillou/ulauncher-aurman-plugin",
+        "updated_at": "2024-12-10T19:45:45.942281",
+        "last_commit": "af11b33cb6ed6ec055859482bdde0353013d1378",
+        "last_commit_time": "2021-07-16T21:51:05"
+    },
+    "com.github.lighttigerxiv.ulauncher-session-manager": {
+        "id": "com.github.lighttigerxiv.ulauncher-session-manager",
+        "url": "https://github.com/lighttigerXIV/ulauncher-session-manager",
+        "updated_at": "2024-12-10T20:13:29.949875",
+        "last_commit": "39218fddb79d86150c4624d96b1a162eba89c993",
+        "last_commit_time": "2023-05-23T08:14:57"
+    }
+}

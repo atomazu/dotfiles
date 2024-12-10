@@ -1,0 +1,12 @@
+{
+  "manifest_version": "1",
+  "name": "Catppuccin-Neutral-Pink",
+  "display_name": "Catppuccin Neutral Pink",
+  "extend_theme": "light",
+  "css_file": "theme.css",
+  "css_file_gtk_3.20+": "theme-gtk-3.20.css",
+  "matched_text_hl_colors": {
+    "when_selected": "#d4c4cd",
+    "when_not_selected": "#d4c4cd"
+  }
+}
