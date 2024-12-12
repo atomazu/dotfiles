@@ -6,7 +6,7 @@
     "hotkey-show-app": "<Primary><Shift><Super>Escape",
     "render-on-screen": "mouse-pointer-monitor",
     "show-indicator-icon": true,
-    "show-recent-apps": "0",
+    "show-recent-apps": "4",
     "terminal-command": "foot",
     "theme-name": "atomazu's Theme"
 }
