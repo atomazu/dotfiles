@@ -33,5 +33,5 @@ export GTK2_RC_FILES="/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc"
 
 # Other
 export TERMINAL=foot
-export XCURSOR_THEME="Notwaita-Black"
+export XCURSOR_THEME="Adwaita"
 export XCURSOR_SIZE="24"
