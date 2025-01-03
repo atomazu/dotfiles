@@ -1,0 +1,66 @@
+[
+    {
+        "fallback": false,
+        "iconPath": ":amazon",
+        "id": "3130017d",
+        "name": "Amazon",
+        "trigger": "ama",
+        "url": "http://www.amazon.com/s/?field-keywords=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":github",
+        "id": "bfc34622",
+        "name": "GitHub",
+        "trigger": "gh",
+        "url": "https://github.com/search?utf8=✓&q=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":google",
+        "id": "45f08ddf",
+        "name": "Google",
+        "trigger": "gg",
+        "url": "https://www.google.com/search?q=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":maps",
+        "id": "28032e85",
+        "name": "Google Maps",
+        "trigger": "maps",
+        "url": "https://www.google.com/maps/search/%s/"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":scholar",
+        "id": "306b4bd6",
+        "name": "Google Scholar",
+        "trigger": "scholar",
+        "url": "https://scholar.google.com/scholar?q=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":google_translate",
+        "id": "ea361a52",
+        "name": "Google Translate",
+        "trigger": "gt",
+        "url": "https://translate.google.com/?text=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":wolfram",
+        "id": "c1e9b3d3",
+        "name": "Wolfram Alpha",
+        "trigger": "wa",
+        "url": "https://www.wolframalpha.com/input/?i=%s"
+    },
+    {
+        "fallback": false,
+        "iconPath": ":youtube",
+        "id": "4f561efd",
+        "name": "YouTube",
+        "trigger": "yt",
+        "url": "https://www.youtube.com/results?search_query=%s"
+    }
+]
