@@ -1,0 +1,42 @@
+# Monitor setup
+monitor = DP-1, 2560x1440@144, 0x0, 1, transform, 1
+monitor = DP-3, 2560x1440@240, 1440x560, 1, bitdepth, 12
+
+# Set primary display
+exec-once = sleep 1 && xrandr --output DP-3 --primary
+
+# NVIDIA cursor fix
+cursor {
+    no_hardware_cursors = true
+}
+
+# Workspaces
+# DP-1: Vertical Monitor
+workspace = 1, monitor:DP-1, default:true, defaultName:SIDE-1
+workspace = 2, monitor:DP-1, defaultName:SIDE-2
+workspace = 3, monitor:DP-1, defaultName:SIDE-3
+workspace = 4, monitor:DP-1, defaultName:SIDE-4
+workspace = 5, monitor:DP-1, defaultName:SIDE-5
+
+# DP-3: Main Monitor (240Hz)
+workspace = 6, monitor:DP-3, default:true, defaultName:MAIN-1
+workspace = 7, monitor:DP-3, defaultName:MAIN-2
+workspace = 8, monitor:DP-3, defaultName:MAIN-3
+workspace = 9, monitor:DP-3, defaultName:MAIN-4
+workspace = 10, monitor:DP-3, defaultName:MAIN-5
+
+# Game-specific rules
+$GAMES = ^(steam_app_.*|osu!|gamescope$)
+windowrulev2 = monitor DP-3, class:$GAMES
+windowrulev2 = fullscreen, class:$GAMES
+windowrulev2 = immediate, class:$GAMES
+
+input {
+    sensitivity = -0.4
+}
+
+# Monitor-column traversal (±1 workspaces)
+bind = SUPER CTRL, E, workspace, +1
+bind = SUPER CTRL, Q, workspace, -1
+bind = SUPER SHIFT, E, movetoworkspace, +1
+bind = SUPER SHIFT, Q, movetoworkspace, -1
