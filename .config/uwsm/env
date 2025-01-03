@@ -1,0 +1,37 @@
+# Detect GPU and set appropriate variables
+if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -q NVIDIA; then
+    # NVIDIA-specific environment
+    export GBM_BACKEND="nvidia-drm"
+    export __GLX_VENDOR_LIBRARY_NAME="nvidia"
+    export LIBVA_DRIVER_NAME="nvidia"
+    export __GL_SYNC_ALLOWED="1"
+    export NVD_BACKEND="direct"
+elif lspci -k | grep -A 2 -E "(VGA|3D)" | grep -q AMD; then
+    # AMD-specific environment
+    export LIBVA_DRIVER_NAME="radeonsi"
+fi
+
+# Wayland/X11 toolkit backend preferences
+export GDK_BACKEND="wayland,x11,*"
+export SDL_VIDEODRIVER="wayland"
+export CLUTTER_BACKEND="wayland"
+export QT_QPA_PLATFORM="wayland:xcb"
+export MOZ_ENABLE_WAYLAND=1
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Application-specific settings
+export ELECTRON_OZONE_PLATFORM_HINT="auto"
+
+# Qt-specific configuration
+export QT_QPA_PLATFORMTHEME="qt6ct"
+export QT_AUTO_SCREEN_SCALE_FACTOR="1"
+export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+
+# GTK theme configuration
+export GTK_THEME="Adwaita:dark"
+export GTK2_RC_FILES="/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc"
+
+# Other
+export TERMINAL=foot
+export XCURSOR_THEME="Adwaita"
+export XCURSOR_SIZE="24"
