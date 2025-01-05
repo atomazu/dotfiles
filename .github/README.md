@@ -1,6 +1,6 @@
 # atomazu's dotfiles
 ## Hey there!
-These are my [dotfiles](https://wiki.archlinux.org/title/Dotfiles), I'm using [Archlinux](https://archlinux.org/) (rolling release) with [Hyprland](https://hyprland.org/).
+These are my [dotfiles](https://wiki.archlinux.org/title/Dotfiles) (managed via [yadm](https://yadm.io/)), I'm using [Archlinux](https://archlinux.org/) (rolling release) with [Hyprland](https://hyprland.org/).
 Looking into the `.config` folder should give you a good look at what software I use, here is also a screenshot for your viewing pleasure:
 ![alt text](image.png)<br>
 Super minimal [Zen Browser](https://zen-browser.app/) and pretty [fastfetch](https://github.com/fastfetch-cli/fastfetch) output in [foot](https://codeberg.org/dnkl/foot) :D
