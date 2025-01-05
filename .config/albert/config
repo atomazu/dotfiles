@@ -36,6 +36,11 @@ command_poweroff=shutdown
 command_reboot=reboot
 enabled=true
 hibernate_enabled=false
+title_lock=Lock
+title_logout=Logout
+title_poweroff=Shutdown
+title_reboot=Reboot
+title_suspend=Sleep
 
 [timer]
 enabled=false
