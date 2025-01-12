@@ -38,10 +38,13 @@ enabled=true
 enabled=true
 
 [python.bitwarden]
-enabled=true
+enabled=false
 
 [python.pacman]
 enabled=false
+
+[python.translators]
+enabled=true
 
 [python.uwsm_launcher]
 enabled=true
