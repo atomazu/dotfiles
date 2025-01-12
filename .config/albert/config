@@ -5,25 +5,45 @@ telemetry=false
 [applications]
 enabled=true
 terminal=footclient
+use_exec=false
 
 [calculator_qalculate]
 enabled=true
 
 [clipboard]
 enabled=true
+persistent=true
 
 [datetime]
 enabled=false
 show_date_on_empty_query=false
 
 [docs]
-enabled=true
+enabled=false
 
 [files]
 enabled=true
 paths=@Invalid()
 
+[mpris]
+enabled=true
+
 [path]
+enabled=true
+
+[python]
+enabled=true
+
+[python.aur]
+enabled=true
+
+[python.bitwarden]
+enabled=true
+
+[python.pacman]
+enabled=false
+
+[python.uwsm_launcher]
 enabled=true
 
 [ssh]

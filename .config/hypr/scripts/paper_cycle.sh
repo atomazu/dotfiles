@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # --- Configuration ---
-WALLPAPER_DIR="$HOME/.config/hypr/backgrounds"
-INTERVAL=300 # Change wallpaper every 1 minute for testing
+WALLPAPER_DIR="$HOME/.config/hypr/wallpapers"
+INTERVAL=600
 DEBUG=true
 
 # Parse arguments
