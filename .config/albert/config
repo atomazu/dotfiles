@@ -55,8 +55,8 @@ enabled=false
 [system]
 command_lock=hyprlock
 command_logout=hyprctl dispatch exit
-command_poweroff=shutdown
-command_reboot=reboot
+command_poweroff=shutdown now
+command_reboot=reboot now
 command_suspend=systemctl suspend -i && hyprlock
 enabled=true
 hibernate_enabled=false
