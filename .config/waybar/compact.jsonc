@@ -97,8 +97,8 @@
     },
 
     "custom/compact": {
-        "format": "[D]",
-        "format-alt": "[C]",
+        "format": "[C]",
+        "format-alt": "[D]",
         "on-click": "~/.config/hypr/scripts/compact_mode.sh",
         "tooltip": true,
         "tooltip-format": "Toggle Compact Mode"
