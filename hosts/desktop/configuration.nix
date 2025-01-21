@@ -1,10 +1,8 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
+  imports = [
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
     ];
   
   boot.loader.systemd-boot.enable = true;
@@ -28,6 +26,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # No need to be imported since it's being provided by the flake.
   home-manager = {
     extraSpecialArgs = { inherit inputs; }; 
     users."jonas" = import ./home.nix;

@@ -14,7 +14,6 @@
     };
   };
 
-  programs.home-manager.enable = true;
   programs.starship.enable = true;
   programs.tmux = {
     enable = true;
