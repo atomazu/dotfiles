@@ -28,14 +28,18 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; }; 
+    users."jonas" = import ./home.nix;
+  };
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; }; 
-    users."jonas" = import ./home.nix;
+  services.openssh = {
+    enable = true;
   };
 
   # services.displayManager.sddm.enable = true;
