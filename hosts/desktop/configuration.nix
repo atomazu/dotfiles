@@ -67,19 +67,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    vim
-    tree
-    git
-    lazygit
-    imv
-    mpv
-    vifm
-  ];
+  environment.systemPackages = with pkgs; [];
   
-  programs.tmux.enable = true;
-  programs.steam.enable = true;
-  programs.firefox.enable = true;
   # programs.sway = {
   #   enable = true;
   #   wrapperFeatures.gtk = true;

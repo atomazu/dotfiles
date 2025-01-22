@@ -9,10 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -23,7 +23,7 @@
         modules = [
           ./hosts/desktop/configuration.nix
           home-manager.nixosModules.default
-          inputs.nixvim.nixosModules.nixvim
+          # inputs.nixvim.nixosModules.nixvim
         ];
       };
     };
