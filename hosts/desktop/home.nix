@@ -16,11 +16,16 @@
       defaultCursor = "Adwaita";
     };
   };
+
   home.packages = with pkgs; [
     tree
   ];
 
-  programs.starship.enable = true;
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -29,7 +34,7 @@
     ];
   };
 
-    programs.git = {
+  programs.git = {
     enable = true;
     userName = "atomazu";
     userEmail = "contact@atomazu.org";
