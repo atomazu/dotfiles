@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ../../home/vim.nix
+    ./../../home/vim.nix
+    ./../../home/sway.nix
   ];
   home.username = "jonas";
   home.homeDirectory = "/home/jonas";
@@ -20,6 +21,15 @@
   home.packages = with pkgs; [
     tree
     fastfetch
+    foot
+    swaybg
+    swaylock
+    swayidle 
+    mako
+    wl-clipboard
+    grim
+    slurp
+    wmenu
   ];
 
   fonts.fontconfig.enable = true;

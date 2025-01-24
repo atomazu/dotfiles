@@ -4,7 +4,7 @@
   imports = [
       ./hardware-configuration.nix
       ./../../system/nvidia.nix
-      ./../../home/sway.nix
+      # ./../../home/sway.nix
     ];
   
   nixpkgs.config.allowUnfree = true;
@@ -83,5 +83,17 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  services.gnome.gnome-keyring.enable = true;
+  security.polkit.enable = true;
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      sway = {
+        prettyName = "Sway";
+        comment = "Sway compositor managed by UWSM";
+        binPath = "/etc/profiles/per-user/jonas/bin/sway";
+      };
+    };
+  };
   system.stateVersion = "24.11";
 }
