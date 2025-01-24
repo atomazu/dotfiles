@@ -3,6 +3,8 @@
 {
   imports = [
       ./hardware-configuration.nix
+      ./../../system/nvidia.nix
+      ./../../home/sway.nix
     ];
   
   nixpkgs.config.allowUnfree = true;
@@ -38,6 +40,7 @@
     users."jonas" = import ./home.nix;
   };
 
+  # Default packages for basic unicode and symbol coverage.
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
@@ -47,18 +50,13 @@
     xserver = {
       xkb = {
         layout = "us";
-        variant = "";
+        variant = ""; 
       };
-
-      videoDrivers = ["nvidia"];
     };
     
     openssh = {
       enable = true;
     };
-
-    gnome.gnome-keyring.enable = true;
-    # blueman.enable = true;
 
     pipewire = {
       enable = true;
@@ -69,7 +67,7 @@
     };
   };
 
-  security.polkit.enable = true;
+  # So applications can run in realtime (performance).
   security.pam.loginLimits = [
     {
       domain = "@users";
@@ -83,56 +81,6 @@
     isNormalUser = true;
     description = "Jonas";
     extraGroups = [ "networkmanager" "wheel" ];
-  };
-
-  programs.uwsm = {
-    enable = true;
-    waylandCompositors = {
-      sway = {
-        prettyName = "Sway";
-        comment = "Sway compositor managed by UWSM";
-        binPath = "/run/current-system/sw/bin/sway";
-      };
-    };
-  };
-
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-    wrapperFeatures.base = true;
-    extraOptions = ["--unsupported-gpu"];
-    xwayland.enable = true;
-    extraPackages = with pkgs; [
-      wmenu
-      swaybg
-      swaylock
-      swayidle 
-      mako
-      wl-clipboard
-      grim
-      slurp
-    ];
-  };
-
-  hardware = {
-    graphics = {
-      enable = true;
-    };
-
-    # bluetooth = {
-    #   enable = true;
-    #   powerOnBoot = true;
-    # };
-
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-
-      open = false;
-      nvidiaSettings = false;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
-    };
   };
 
   system.stateVersion = "24.11";

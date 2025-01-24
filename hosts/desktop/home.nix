@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/programs/vim.nix
+    ../../home/vim.nix
   ];
   home.username = "jonas";
   home.homeDirectory = "/home/jonas";
@@ -19,15 +19,28 @@
 
   home.packages = with pkgs; [
     tree
+    fastfetch
   ];
 
   fonts.fontconfig.enable = true;
   programs.firefox.enable = true;
 
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    profileExtra = ''[ "$(tty)" = "/dev/tty1"  ] && uwsm start select''; 
+    initExtra = ''eval "$(starship init bash)"'';
+  };
+
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
   };
+
+  # programs.fzf = {
+  #   enable = true;
+  #   enableBashIntegration = true;
+  # };
 
   programs.tmux = {
     enable = true;
