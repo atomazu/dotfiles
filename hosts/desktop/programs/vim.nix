@@ -31,5 +31,4 @@
       inoremap jj <esc>
     '';
   };
-
 }

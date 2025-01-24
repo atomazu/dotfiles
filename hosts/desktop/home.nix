@@ -21,6 +21,9 @@
     tree
   ];
 
+  fonts.fontconfig.enable = true;
+  programs.firefox.enable = true;
+
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
@@ -38,5 +41,14 @@
     enable = true;
     userName = "atomazu";
     userEmail = "contact@atomazu.org";
+  };
+
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        dpi-aware = "yes";
+      };
+    }; 
   };
 }

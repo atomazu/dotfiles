@@ -5,6 +5,9 @@
       ./hardware-configuration.nix
     ];
   
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -26,38 +29,56 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # No need to be imported since it's being provided by the flake.
+  environment.systemPackages = with pkgs; [];
+
   home-manager = {
-    extraSpecialArgs = { inherit inputs; }; 
+    extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users."jonas" = import ./home.nix;
   };
 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  fonts.enableDefaultPackages = true;
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
+
+  services = {
+    xserver = {
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+
+      videoDrivers = ["nvidia"];
+    };
+    
+    openssh = {
+      enable = true;
+    };
+
+    # displayManager.ly.enable = true;
+    # gnome.gnome-keyring.enable = true;
+    # blueman.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
   };
 
-  services.openssh = {
-    enable = true;
-  };
-
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
-  # services.gnome.gnome-keyring.enable = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32Bit = true;
-  #   pulse.enable = true;
-  #   jack.enable = true;
-  # };
-
-  # security.rtkit.enable = true;
   # security.polkit.enable = true;
-  # security.pam.services.swaylock = {
-  #   text = "auth include login"; 
-  # };
+  security.pam.loginLimits = [
+    {
+      domain = "@users";
+      item = "rtprio";
+      type = "-";
+      value = 1;
+    }
+  ];
 
   users.users.jonas = {
     isNormalUser = true;
@@ -65,41 +86,55 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [];
-  
-  # programs.sway = {
-  #   enable = true;
-  #   wrapperFeatures.gtk = true;
-  #   wrapperFeatures.base = true;
-  #   extraOptions = ["--unsupported-gpu"];
-  #   extraPackages = with pkgs; [
-  #     foot
-  #     wmenu
-  #     swaybg
-  #     swaylock
-  #     swayidle 
-  #     mako
-  #     wl-clipboard
-  #   ];
-  # };
-
-  hardware.graphics = {
+  programs.uwsm = {
     enable = true;
-  }; 
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-
-    open = false;
-    nvidiaSettings = false;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    waylandCompositors = {
+      sway = {
+        prettyName = "Sway";
+        comment = "Sway compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/sway";
+      };
+    };
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    wrapperFeatures.base = true;
+    extraOptions = ["--unsupported-gpu"];
+    xwayland.enable = true;
+    extraPackages = with pkgs; [
+      wmenu
+      swaybg
+      swaylock
+      swayidle 
+      mako
+      wl-clipboard
+      grim
+      slurp
+    ];
+  };
+
+  hardware = {
+    graphics = {
+      enable = true;
+    };
+
+    # bluetooth = {
+    #   enable = true;
+    #   powerOnBoot = true;
+    # };
+
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+
+      open = false;
+      nvidiaSettings = false;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
+    };
+  };
 
   system.stateVersion = "24.11";
 }
