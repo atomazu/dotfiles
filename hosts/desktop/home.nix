@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./programs/vim.nix
+    ../../modules/programs/vim.nix
   ];
   home.username = "jonas";
   home.homeDirectory = "/home/jonas";
