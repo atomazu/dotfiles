@@ -57,8 +57,7 @@
       enable = true;
     };
 
-    # displayManager.ly.enable = true;
-    # gnome.gnome-keyring.enable = true;
+    gnome.gnome-keyring.enable = true;
     # blueman.enable = true;
 
     pipewire = {
@@ -70,7 +69,7 @@
     };
   };
 
-  # security.polkit.enable = true;
+  security.polkit.enable = true;
   security.pam.loginLimits = [
     {
       domain = "@users";
