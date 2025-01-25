@@ -1,9 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./../../home/vim.nix
     ./../../home/sway.nix
+    ./../../home/nixvim.nix
   ];
   home.username = "jonas";
   home.homeDirectory = "/home/jonas";
@@ -30,16 +31,26 @@
     grim
     slurp
     wmenu
+    osu-lazer-bin
   ];
 
   fonts.fontconfig.enable = true;
   programs.firefox.enable = true;
 
+  qt = {
+    enable = true;
+    style.name = "kvantum";
+    platformTheme.name = "kvantum";
+  };
+
+  gtk = {
+    enable = true;
+  };
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
     profileExtra = ''[ "$(tty)" = "/dev/tty1"  ] && uwsm start select''; 
-    initExtra = ''eval "$(starship init bash)"'';
   };
 
   programs.starship = {
@@ -52,11 +63,17 @@
   #   enableBashIntegration = true;
   # };
 
+  catppuccin.enable = true;
+  catppuccin.flavor = "macchiato";
+
   programs.tmux = {
     enable = true;
     clock24 = true;
+    terminal = "tmux-256color";
+    escapeTime = 10;
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.sensible
     ];
   };
 
@@ -68,10 +85,10 @@
 
   programs.foot = {
     enable = true;
-    settings = {
-      main = {
-        dpi-aware = "yes";
-      };
-    }; 
+    # settings = {
+    #   main = {
+    #     dpi-aware = "yes";
+    #   };
+    # }; 
   };
 }

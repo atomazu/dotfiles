@@ -4,7 +4,6 @@
   imports = [
       ./hardware-configuration.nix
       ./../../system/nvidia.nix
-      # ./../../home/sway.nix
     ];
   
   nixpkgs.config.allowUnfree = true;
@@ -33,12 +32,12 @@
 
   environment.systemPackages = with pkgs; [];
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users."jonas" = import ./home.nix;
-  };
+  # home-manager = {
+  #   extraSpecialArgs = { inherit inputs; };
+  #   useGlobalPkgs = true;
+  #   useUserPackages = true;
+  #   users."jonas" = import ./home.nix;
+  # };
 
   # Default packages for basic unicode and symbol coverage.
   fonts.enableDefaultPackages = true;
