@@ -15,6 +15,7 @@
       menu = "wmenu-run -b";
       terminal = "foot";
       modifier = "Mod4";
+
       output = {
         DP-3 = {
           mode = "2560x1440@240hz";

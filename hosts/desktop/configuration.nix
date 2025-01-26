@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -30,14 +30,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  environment.systemPackages = with pkgs; [];
-
-  # home-manager = {
-  #   extraSpecialArgs = { inherit inputs; };
-  #   useGlobalPkgs = true;
-  #   useUserPackages = true;
-  #   users."jonas" = import ./home.nix;
-  # };
+  # environment.systemPackages = with pkgs; [];
 
   # Default packages for basic unicode and symbol coverage.
   fonts.enableDefaultPackages = true;

@@ -27,10 +27,15 @@
       treesitter.enable = true;
       telescope.enable = true;
       telescope.extensions.fzf-native.enable = true;
-      nix.enable = true;
+
       oil.enable = true;
       commentary.enable = true;
-
+      nix.enable = true;
+      bufferline.enable = true;
+      
+      lsp-format.enable = true;
+      lsp-signature.enable = true;
+      lsp-status.enable = true;
       lsp = {
         enable = true;
         servers = {
@@ -39,16 +44,11 @@
           nixd.enable = true;
         };
       };
-      lsp-format.enable = true;
-      lsp-signature.enable = true;
-      lsp-status.enable = true;
-
+      
       cmp.enable = true;
       cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
-
-      bufferline.enable = true;
 
       nvim-surround.enable = true;
       nvim-autopairs.enable = true;

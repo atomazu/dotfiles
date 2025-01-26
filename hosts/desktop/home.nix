@@ -5,6 +5,7 @@
     ./../../home/vim.nix
     ./../../home/sway.nix
     ./../../home/nixvim.nix
+    ./../../home/waybar.nix
   ];
   home.username = "jonas";
   home.homeDirectory = "/home/jonas";
@@ -21,24 +22,22 @@
 
   home.packages = with pkgs; [
     tree
-    fastfetch
-    foot
-    swaybg
-    swaylock
-    swayidle 
-    mako
-    wl-clipboard
     grim
     slurp
     wmenu
-    osu-lazer-bin
+    wl-clipboard
   ];
 
   fonts.fontconfig.enable = true;
   programs.firefox.enable = true;
 
+  catppuccin.enable = true;
+  catppuccin.flavor = "macchiato";
+
   qt = {
     enable = true;
+
+    # These options are needed for catppuccin
     style.name = "kvantum";
     platformTheme.name = "kvantum";
   };
@@ -46,6 +45,10 @@
   gtk = {
     enable = true;
   };
+
+  programs.fastfetch.enable = true;
+  programs.fuzzel.enable = true;
+  programs.mako.enable = true;
 
   programs.bash = {
     enable = true;
@@ -58,13 +61,14 @@
     enableBashIntegration = true;
   };
 
-  # programs.fzf = {
-  #   enable = true;
-  #   enableBashIntegration = true;
-  # };
-
-  catppuccin.enable = true;
-  catppuccin.flavor = "macchiato";
+  programs.wpaperd = {
+    enable = true;
+    settings = {
+      default = {
+        path = "~/.nixos/assets/wallpaper.jpg";
+      };
+    };
+  };
 
   programs.tmux = {
     enable = true;
@@ -85,10 +89,15 @@
 
   programs.foot = {
     enable = true;
-    # settings = {
-    #   main = {
-    #     dpi-aware = "yes";
-    #   };
-    # }; 
+    settings = {
+      main = {
+        dpi-aware = "yes";
+        font = "monospace:size=11";
+      };
+
+      mouse = {
+        hide-when-typing = "yes";
+      };
+    }; 
   };
 }
