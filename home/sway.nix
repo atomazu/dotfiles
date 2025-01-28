@@ -1,31 +1,67 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./waybar.nix
+  ];
+  
+  programs.wpaperd = {
+    enable = true;
+    settings = {
+      default = {
+        path = "~/.nixos/assets/wallpaper.jpg";
+      };
+    };
+  };
+
+  services.mako.enable = true;
+  programs.tofi = {
+    enable = true;
+    settings = {
+      anchor = "top";
+      width = "100%";
+      height = 24;
+      horizontal = true;
+      font-size = 12;
+      prompt-text = " run: ";
+      font = "monospace";
+      outline-width = 0;
+      border-width = 0;
+      min-input-width = 120;
+      result-spacing = 15;
+      padding-top = 0;
+      padding-bottom = 0;
+      padding-left = 0;
+      padding-right = 0;
+    };
+  };
+
   wayland.windowManager.sway = {
     enable = true;
-    
+
     wrapperFeatures.gtk = true;
     wrapperFeatures.base = true;
-    extraOptions = ["--unsupported-gpu"];
-   
-    # TODO Move device specific options to host specific configuration.
-    # That includes the 'output' section and '--unsupported-gpu' since it's
-    # hardware specific.
-    config = {
-      menu = "wmenu-run -b";
-      terminal = "foot";
-      modifier = "Mod4";
+    xwayland = true;
+    # package = pkgs.swayfx; 
 
-      output = {
-        DP-3 = {
-          mode = "2560x1440@240hz";
-          pos = "1440 0";
-        };
-        DP-4 = {
-          mode = "2560x1440@144hz";
-          pos = "0 0";
-          transform = "270";
-        };
+    config = {
+      menu = "${pkgs.tofi}/bin/tofi-run | xargs swaymsg exec --";
+      terminal = "${pkgs.foot}/bin/foot";
+      modifier = "Mod4";
+      window.titlebar = false;
+
+      bars = [{
+        command = "${pkgs.waybar}/bin/waybar"; 
+      }];
+
+      startup = [{
+        command = "${pkgs.wpaperd}/bin/wpaperd"; 
+      }];
+
+      floating = {
+        criteria = [
+          { class = "pavucontrol"; }
+        ];
       };
     };
   };

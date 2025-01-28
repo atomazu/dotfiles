@@ -3,7 +3,6 @@
 {
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
     style = ''
         * {
             font-size: 12px;

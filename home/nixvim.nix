@@ -27,6 +27,7 @@
       treesitter.enable = true;
       telescope.enable = true;
       telescope.extensions.fzf-native.enable = true;
+      tmux-navigator.enable = true;
 
       oil.enable = true;
       commentary.enable = true;

@@ -30,7 +30,15 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [ mpv imv anki-bin ];
+  # programs.steam.enable = true;
+  # programs.steam.gamescopeSession.enable = true;
+  # programs.gamemode.enable = true;
+
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
+  };
 
   # Default packages for basic unicode and symbol coverage.
   fonts.enableDefaultPackages = true;
@@ -77,6 +85,7 @@
 
   services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;
+  
   programs.uwsm = {
     enable = true;
     waylandCompositors = {
@@ -87,5 +96,6 @@
       };
     };
   };
+  
   system.stateVersion = "24.11";
 }

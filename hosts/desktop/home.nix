@@ -2,10 +2,8 @@
 
 {
   imports = [
-    ./../../home/vim.nix
     ./../../home/sway.nix
     ./../../home/nixvim.nix
-    ./../../home/waybar.nix
   ];
   home.username = "jonas";
   home.homeDirectory = "/home/jonas";
@@ -17,7 +15,7 @@
     x11 = {
       enable = true;
       defaultCursor = "Adwaita";
-    };
+   };
   };
 
   home.packages = with pkgs; [
@@ -26,6 +24,9 @@
     slurp
     wmenu
     wl-clipboard
+    osu-lazer-bin
+    nemo
+    file-roller
   ];
 
   fonts.fontconfig.enable = true;
@@ -47,27 +48,16 @@
   };
 
   programs.fastfetch.enable = true;
-  programs.fuzzel.enable = true;
-  programs.mako.enable = true;
 
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    profileExtra = ''[ "$(tty)" = "/dev/tty1"  ] && uwsm start select''; 
+    profileExtra = ''[ "$(tty)" = "/dev/tty1" ] && uwsm start select''; 
   };
 
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
-  };
-
-  programs.wpaperd = {
-    enable = true;
-    settings = {
-      default = {
-        path = "~/.nixos/assets/wallpaper.jpg";
-      };
-    };
   };
 
   programs.tmux = {
@@ -99,5 +89,23 @@
         hide-when-typing = "yes";
       };
     }; 
+  };
+
+  wayland.windowManager.sway = {
+    extraOptions = ["--unsupported-gpu"];
+
+    config = {
+      output = {
+        DP-3 = {
+          mode = "2560x1440@240hz";
+          pos = "1440 0";
+        };
+        DP-4 = {
+          mode = "2560x1440@144hz";
+          pos = "0 0";
+          transform = "270";
+        };
+      };
+    };
   };
 }
