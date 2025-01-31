@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -25,15 +25,18 @@
     wmenu
     wl-clipboard
     osu-lazer-bin
-    nemo
+    xfce.thunar 
     file-roller
+    anki-bin 
+    pavucontrol
   ];
 
   fonts.fontconfig.enable = true;
   programs.firefox.enable = true;
 
-  catppuccin.enable = true;
-  catppuccin.flavor = "macchiato";
+  # catppuccin.enable = true;
+  # catppuccin.flavor = "macchiato";
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   qt = {
     enable = true;

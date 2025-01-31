@@ -2,7 +2,6 @@
 
 {
   imports = [
-      ./hardware-configuration.nix
       ./../../system/nvidia.nix
     ];
   
@@ -30,10 +29,15 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  environment.systemPackages = with pkgs; [ mpv imv anki-bin ];
+  environment.systemPackages = with pkgs; [
+    mpv 
+    imv 
+  ];
+
   # programs.steam.enable = true;
   # programs.steam.gamescopeSession.enable = true;
   # programs.gamemode.enable = true;
+  # catppuccin.enable = true;
 
   hardware.opentabletdriver = {
     enable = true;
@@ -45,6 +49,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
+  programs.dconf.enable = true;
 
   services = {
     xserver = {
@@ -83,8 +88,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  #/ Sway specific?
   services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;
+  #/
   
   programs.uwsm = {
     enable = true;
