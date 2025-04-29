@@ -1,17 +1,42 @@
-# atomazu's dotfiles
-## Hey there!
-These are my [dotfiles](https://wiki.archlinux.org/title/Dotfiles) (managed via [yadm](https://yadm.io/)), I'm using [Archlinux](https://archlinux.org/) (rolling release) with [Hyprland](https://hyprland.org/).
-Looking into the `.config` folder should give you a good look at what software I use, here is also a screenshot for your viewing pleasure:
-![default_desktop](default_desktop.png)<br>
-Super minimal [Zen Browser](https://zen-browser.app/) and pretty [fastfetch](https://github.com/fastfetch-cli/fastfetch) output in [foot](https://codeberg.org/dnkl/foot) :D
+# My Dotfiles
 
-![compact_mode](compact_mode.png)<br> 
-Compact mode, toggleable by the button `[D]` in the top right!
+Hey there! This repository holds my personal configuration files (dotfiles), managed with [yadm](https://yadm.io/). They're set up for my Arch Linux system running the [Hyprland](https://hyprland.org/) Wayland compositor.
 
-![albert_launcher](albert_launcher.png)<br>
-Custom style for my application launcher [Albert](https://albertlauncher.github.io/).
+This is very much *my* personal setup, reflecting how I like things configured.
 
-## Important note
-These files are not prepared to be used by any other people - that's why there is no install script or guide for using these resources. If you are interested I can sort some things out and make it a bit more usable.
+## How Things Are Organized (Conceptually)
 
-That said, many things should just work if you copy them over to your configuration if you're using a similar setup/stack to mine.
+Instead of one big file, the configuration is split across different areas, mostly following standard conventions:
+
+1.  **Core Application Settings (`.config/`):** This is the main hub. You'll find configurations here for key graphical components like:
+    *   **Hyprland:** The window manager itself, including rules, device-specific tweaks (laptop vs. desktop), startup scripts, and wallpaper management (`hyprpaper`).
+    *   **Waybar:** The status bar, with distinct styles including a custom "compact mode".
+    *   **Albert:** The application launcher, with its settings and defined web search engines.
+    *   **Foot:** My terminal emulator.
+    *   **Mako:** The notification daemon.
+    *   **Fastfetch:** The system information tool, including a custom logo.
+    *   **GTK & Qt:** Basic theme settings for application toolkits.
+
+2.  **Shell & Terminal Tools (Dotfiles in Home):** Configurations for command-line tools reside directly in the home directory:
+    *   `.zshrc`: Zsh shell setup (using Oh My Zsh).
+    *   `.vimrc`: Vim editor configuration (using vim-plug).
+    *   `.tmux.conf`: Tmux terminal multiplexer settings.
+
+3.  **Custom Themes & Data (`.local/share/`):** Some application-specific data or themes that don't belong in `.config` live here, like my custom Albert theme.
+
+4.  **Helper Scripts (`.config/hypr/scripts/`, `.config/uwsm/`):** Various shell scripts assist with functionality:
+    *   Hyprland scripts handle things like screenshots (`hyprshot.sh`), toggling night light (`sunset_toggle.sh`), and cycling wallpapers (`paper_cycle.sh`).
+    *   UWSM appears to be my custom set of scripts for managing the session environment and starting services correctly within Hyprland.
+
+5.  **Repository Assets (`.github/`):** Contains this README and the screenshots shown below.
+
+## Key Features & Highlights
+
+*   **Hyprland:** Tailored setup with different configurations for my desktop and laptop.
+*   **Waybar Compact Mode:** A script toggles Waybar between a standard and a minimal, compact appearance.
+*   **Custom Albert Theme:** A personalized look for the Albert launcher.
+*   **UWSM:** My scripts for managing environment variables (like GPU-specific ones) and launching session applications.
+
+## Screenshot
+
+![default_desktop](https://github.com/atomazu/dotfiles/blob/master/.github/default_desktop.png)
